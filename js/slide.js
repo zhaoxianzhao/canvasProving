@@ -13,11 +13,11 @@ function createImg() {
     cenImg.src = getRandomImg()
     return cenImg
 }
-var w = 310, // canvas宽度
+const w = 310, // canvas宽度
     h = 155, // canvas高度
     qw = 50, // 切图宽
-    qh = 30, // 切图高
-    x = '', // 坐标
+    qh = 30; // 切图高
+var x = '', // 坐标
     y = ''; // 坐标
 function getRandomNumberByRange(start, end) {
     return Math.round(Math.random() * (end - start) + start)
@@ -48,7 +48,7 @@ function zhaoxianchao() {
 
     function fa(xian, zhao) {
         let canvas = xian.getContext('2d');
-        canvas.clearRect(0,0,w,h)
+        canvas.clearRect(0,0,w,h);
         canvas.drawImage(zhao, x, y, qw, qh, 0, y, qw, qh);
     }
 
@@ -75,7 +75,7 @@ function zhaoxianchao() {
     })
 }
 
-zhaoxianchao()
+zhaoxianchao();
 $(document).on('mouseup', function (e) {
     if (!zhaoxian) {
         return false
